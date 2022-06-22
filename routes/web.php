@@ -20,15 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group
-(function (){
-    Route::get('/', 'HomeController@index')->name('dashboard'); //admin
+Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function (){
+    Route::get('/', 'HomeController@index')->name('dashboard');//admin
 });
 
  
 
-// ultima rotta
-Route::get("{any?}", function ()
-{
-    return view('guest.home');
-})->where('any','.*');
+//ultima rotta
+Route::get("{any?}", function () {
+    return view("guest.home");
+})->where("any", ".*");
+
