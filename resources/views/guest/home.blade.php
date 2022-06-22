@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
-
 @section('app')
 
-<div id="app"></div>
-
+<div id="root"></div>
 
 @endsection

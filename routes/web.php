@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -24,6 +28,7 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
  
 
 // ultima rotta
-Route::get("{any?}", function () {
-    return view("guest.home");
-})->where("any", ".*");
+Route::get("{any?}", function ()
+{
+    return view('guest.home');
+})->where('any','.*');
