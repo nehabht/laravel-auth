@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+    <h1>All Posts</h1>
+    <div><a href="{{route('admin.posts.create')}}" class="btn btn-primary text-white">Add Post</a></div>
     <table class="table table-striped table-inverse table-responsive">
         <thead class="thead-inverse">
             <tr>
@@ -19,7 +21,11 @@
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
                     <td><img width="150px" src="{{ $post->cover_image }}" alt="" srcset=""></td>
-                    <td>View - Edit - Delete</td>
+                    <td>
+                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary text-white">View</a>
+                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-dark">Edit</a>
+                        <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-danger text-white">Delete</a>
+                    </td>
                 </tr>
 
                 @empty 
