@@ -17,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::All();
+        $posts = Post::orderByDesc('id')->get();
         //dd($posts);
         return view('admin.posts.index', compact('posts'));
     }
@@ -40,15 +40,18 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        dd($request->all());
+        //dd($request->all());
 
         //validate data
-
+        $val_data = $request->validated();
         //generate the slug
-
+        $slug = Str::slug($request->title, '-');
+        //dd($slug);
+        $val_data['slug'] = $slug;
         //create the resource
-
+        Post::create($val_data);
         //redirect to a get route
+        return redirect()->route('admin.posts.index')->with('message', 'Post Created GG');
     }
 
     /**
