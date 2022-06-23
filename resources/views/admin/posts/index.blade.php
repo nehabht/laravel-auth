@@ -7,8 +7,8 @@
             <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th>Cover Image</th>
                 <th>Slug</th>
+                <th>Cover Image</th>
                 <th>Actions</th>
             </tr>
             </thead>
