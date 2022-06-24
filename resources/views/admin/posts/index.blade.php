@@ -2,8 +2,17 @@
 
 @section('content')
 <div class="container">
-    <h1>All Posts</h1>
-    <div><a href="{{route('admin.posts.create')}}" class="btn btn-primary text-white">Add Post</a></div>
+    <h1 class="mt-4">All Posts</h1>
+    <div><a href="{{route('admin.posts.create')}}" class="btn btn-primary text-white my-4">Add Post</a></div>
+
+
+    <!-- feedback -->
+    @if (session('message'))
+        <div class="alert alert-success mt-4">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <table class="table table-striped table-inverse table-responsive">
         <thead class="thead-inverse">
             <tr>
