@@ -6,7 +6,7 @@
 
 <div class="container w-50 pt-4 "> 
 @include('partials.errors')
-    <form action="{{route('admin.posts.update', $post->id)}}" method="post"> 
+    <form action="{{route('admin.posts.update', $post->slug)}}" method="post"> 
         @csrf
         @method('PUT')
 
