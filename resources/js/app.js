@@ -30,7 +30,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#root',
     render: h => h(App) 
-    //senza render e login indirizza alla pagina app.blade
 });
