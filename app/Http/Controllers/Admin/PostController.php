@@ -51,7 +51,7 @@ class PostController extends Controller
         //create the resource
         Post::create($val_data);
         //redirect to a get route
-        return redirect()->route('admin.posts.index')->with('message', 'Post Created GG');
+        return redirect()->route('admin.posts.index')->with('message', 'Post Created gj!');
     }
 
     /**
@@ -109,6 +109,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('admin.posts.index')->with('message', "$post->title GG" );
     }
 }
